@@ -9,9 +9,9 @@ const fotos = [
 // A sua lista de músicas. Mude os caminhos para os seus arquivos de áudio e os títulos.
 const musicas = [
     { src: './musica/Mica.m4a', title: 'MICA FALANDO' },
-    { src: './musica/Aliança.mp3', title: 'Música Especial' },
-    { src: './musica/Partilhar.mp3', title: 'Trilha Sonora' },
-    { src: './musica/Sequência da Botação.mp3', title: 'Trilha Sonora' },
+    { src: './musica/Aliança.mp3', title: 'Música ' },
+    { src: './musica/Partilhar.mp3', title: 'Trilha ' },
+    { src: './musica/Sequência da Botação.mp3', title: 'Trilha' },
     // Adicione mais músicas aqui!
 ];
 
