@@ -1,0 +1,180 @@
+/* Importa a fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --bg-dark: #0a0a0a; /* Fundo preto quase total */
+    --panel-bg: #1a1a1a; /* Fundo dos painéis */
+    --border-color: #333; /* Borda sutil */
+    --accent-white: #e0e0e0; /* Branco suave para o neon e texto */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--accent-white);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    padding: 30px;
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--border-color);
+}
+
+/* Estilo do player de música */
+.music-player {
+    background-color: var(--panel-bg);
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+.music-player .controls button {
+    background: none;
+    border: none;
+    color: var(--accent-white);
+    cursor: pointer;
+    font-size: 1.3em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.music-player .controls button:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+.music-player #song-title {
+    color: var(--accent-white);
+    font-size: 1.1em;
+}
+
+/* Estilo do palco de fotos */
+.photo-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    max-width: 100%;
+}
+
+.photo-stage div {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.main-photo {
+    width: 550px;
+    z-index: 15;
+    opacity: 1;
+    filter: none;
+    border: 2px solid #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+    transform: scale(1.25);
+}
+
+.side-photo {
+    width: 350px;
+    opacity: 0.6;
+    transform: scale(0.9);
+    border: 1px solid var(--border-color);
+    z-index: 5;
+}
+
+/* Efeito de hover nas fotos laterais */
+.side-photo:hover {
+    opacity: 0.8;
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo do texto */
+.texto-aniversario h1 {
+    margin-top: 40px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.texto-aniversario p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+---
+
+/* ======================================= */
+/* ESTILO ESPECÍFICO PARA CELULAR (< 768px) */
+/* ======================================= */
+@media (max-width: 768px) {
+    /* Ajusta o container principal */
+    .container {
+        padding: 20px;
+    }
+    
+    /* Centraliza o player de música (se já não estiver) */
+    .music-player {
+        margin: 0 auto 30px auto;
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    /* Muda a direção das fotos para que fiquem uma em cima da outra */
+    .photo-stage {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Ajusta o tamanho e remove os efeitos das fotos em telas pequenas */
+    .photo-stage div {
+        height: 250px; /* Altura padrão para celular */
+        width: 100%;
+        max-width: 300px;
+        transform: none !important; /* Remove o efeito de escala */
+        opacity: 1 !important; /* Garante visibilidade total */
+        filter: none !important; /* Remove qualquer filtro */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+        border: 1px solid var(--border-color);
+        z-index: auto !important; /* Remove a sobreposição */
+    }
+
+    /* Remove os estilos específicos da foto principal em telas pequenas */
+    .main-photo {
+        width: 100%;
+    }
+
+    /* Ajusta os textos para melhor leitura em celular */
+    .texto-aniversario h1 {
+        font-size: 2em;
+    }
+
+    .texto-aniversario p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+}
